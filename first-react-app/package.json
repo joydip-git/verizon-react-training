@@ -1,0 +1,38 @@
+{
+  "name": "first-react-app",
+  "version": "1.0.0",
+  "description": "simple react app",
+  "main": "index.js",
+  "scripts": {
+    "compile": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joydip-git/verizon-react-training.git"
+  },
+  "keywords": [
+    "React",
+    "UI",
+    "Tools"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joydip-git/verizon-react-training/issues"
+  },
+  "homepage": "https://github.com/joydip-git/verizon-react-training#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
