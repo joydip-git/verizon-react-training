@@ -1,0 +1,109 @@
+Roadmap for React JS
+
+JavaScript
+Prototype based programming
+
+new features in JS :ES6 
+let, const, class, super, arrow, spread
+
+server-side vs. client-side
+ASP.NET, Java Servelet
+
+2008 jquery
+Node JS
+
+compile and execute a javascript code
+debugger tool  -console
+compiler and runtime
+V8 engine
+
+Node JS - 
+server-side JavaScript framework
+asynchronous
+built at the top of V8 engine
+
+write code in JS/TypeScript/NativeScript
+pass it to node js runtime
+	converts JS code into C++ code
+	supply the same to v8 engine
+
+integrated.terminal
+
+module:
+
+module formats:
+common js, require.js, ES6 module
+
+module loaders:
+understand how and which format has been used to create your module
+and load that during runtime
+
+require will return you the exports property object
+
+ptototype:
+
+for every function constructor there is a blank object createdm -- prototype of the function
+
+if any object is created based on that function call, then new object is created. this object is linked to the prototype of function
+
+class, super, extends
+
+React - JS library
+component design
+
+
+components - *.js/jsx/ts/tsx
+root component - App.js
+index.js -- contains code to render React DOM in the actual DOM by placing the entire
+thing in root ReactDOM.render(<App/>, document.querySelector('root'))
+index.html --placeholder: <div id="root"></div>
+
+code: JSX 
+class A{
+  render(){
+    const d = new Date();
+    return (<div>{new Date()}</div>); //React.createElement('div',null,d); 
+  }
+}
+
+export default A
+
+packages: Node packages (Node JS) NPM
+react
+react-dom
+
+Conversion: Transpilation
+babel-core
+babel presets
+
+*.js --> JSX =>vanilla JS
+
+MINIFIED and BUNDLING: webapck webpack-cli
+100 JS --> single.js 
+50 CSS --> single.css
+20 images --> 
+xml, csv --> 
+
+DEV   				PROD
+---------------------------------------------
+webpack-dev-server              serve, http-server
+
+create-react-app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

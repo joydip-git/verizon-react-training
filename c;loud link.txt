@@ -1,0 +1,18 @@
+https://labs.alchemycloud.co.in
+Username: alchemycloud\user1
+Password: Alchemycloud@123
+
+machine credentials: 
+username: .\test
+password: pass@word1
+
+github:
+https://github.com/joydip-git/verizon-react-training
+
+google drive:
+https://drive.google.com/drive/folders/13dmS-EgjE67YLyE_j8m7sN0va_K_CnMz?usp=sharing
+
+webex link:
+https://verizontwo.webex.com/verizontwo/j.php?MTID=m41c22ff8ca2d7e618735850f8096d573
+
+
