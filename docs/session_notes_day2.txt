@@ -65,6 +65,40 @@ function App() {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
+Set-ExecutionPolicy Unrestricted
+
+components: functional component and class component
+
+component: return an element
+component instance: an instance of the component which will be called to return the element
+element: design with data placed in it ti be rendered
+
+React element NOT an HTML element
+
+to create element:
+vanilla javascript 
+JSX JavaScript Extended => HTMLish look and feel
+helps you to create a React element easily usinf syntax
+
+const element = <h1>Hi</h1>;
+function App(){
+   return element;
+}
+class App extends React.Component{}
+
+const app = new App();
+ReactDOM.render(app)
+
+ReactDOM.render(<App/>,....);
+
+
+function Component(){
+}
+
+Component.prototype.<> = function(){}
+
+
+
 
 
 

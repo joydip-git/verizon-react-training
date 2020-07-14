@@ -1,0 +1,29 @@
+import React from 'react'
+
+/*
+let data = 'Hello Guys again...';
+const el = React.createElement('h1', {id:'a'}, data);
+//<div id='test'><h1 class='mystyle' id='a'>Hello world</h1><div>
+// const el = <h1>Hello World</h1>;
+/**
+ * {
+ * type:'h1',
+ * props:{
+ *     id:'a',
+ *     className:'mystyle'
+ *     children:'Hello World'
+ * }
+ * }
+ */
+function App() {
+  return el;
+}
+export default App
+
+// function test() {
+//   return 20;
+
+// }
+
+// test();
+*/
