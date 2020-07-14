@@ -1,0 +1,5 @@
+JavaScript:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+
+ES6 new features:
+http://es6-features.org/#Constants
