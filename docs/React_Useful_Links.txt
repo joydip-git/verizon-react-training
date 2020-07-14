@@ -6,3 +6,6 @@ http://es6-features.org/#Constants
 
 json schema link:
 http://www.schemastore.org/json/
+
+webpack config for react
+https://webpack.js.org/configuration/

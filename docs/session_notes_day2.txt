@@ -1,5 +1,5 @@
 
-
+steps to create a react application without tool:
 1. create a blank folder (react-app-without-tool)
 2. create package.json file using command
 >npm init --yes
@@ -22,16 +22,9 @@
 9. configure bundler (webapck)
 	a. create a file -- webpack.config.js (at root directory)
 
-
 10. configure compiler (babel) [typescript - tsc compiler]
 	a. add a file at thge root directory: .babelrc
 	b. put plugin information with "presets" key
-
-write code --(babel compiler)--> ES5 or lower version of code and compiles
-webapck takes this code and then bundles it
-webapck will use babel-loader 
-
-module, module-format, module-format-loader
 
 React Element Actual Scenario:
 
@@ -72,22 +65,8 @@ function App() {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-NPM, BOWER
 
 
-steps:
-1. run the command "npm run build"
-	a. webpack calls babel
-	b. babel transpiles the ES6 code to lower version (ES5, ES3,..)
-		babel uses presets (plugins) whenever necessary
-		@babel/preset-react
-2. now webpack will bundle everything in single JS file
-	will use babel-loader to load the modules as present in transpiled code
-3. bundle css files into one and use css-loader (with help of style-loader) 
-4. webpack-dev-server will take care of loading the content from dist folder
-
-
-npm i webpack webpack-dev-server webpack-cli html-webpack-plugin clean-webpack-plugin --save-dev
 
 
 
