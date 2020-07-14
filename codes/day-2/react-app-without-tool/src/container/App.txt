@@ -1,0 +1,23 @@
+
+import React from 'react'
+
+//createing react element (without JSX)
+// const element = React.createElement('h1',{id='mainHeader'},'Hello');
+/*
+var element = {
+    type: 'h1',
+    props: {
+        id: 'mainHeader',       
+        children: 'hello'
+    }
+}
+*/
+//createing react element (with JSX)
+const element = <h1>Hello</h1>;
+
+// component: App
+//return the element
+function App() {
+    return element;
+}
+export default App;

@@ -1,0 +1,1 @@
+type >npm i to install all packages

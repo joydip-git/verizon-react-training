@@ -1,0 +1,99 @@
+
+
+1. create a blank folder (react-app-without-tool)
+2. create package.json file using command
+>npm init --yes
+3. download react packages:
+>npm i react react-dom --save
+
+4. download babel packages:
+>npm i @babel/core @babel/cli @babel/preset-env @babel/preset-react --save-dev
+
+5. download bundler packages:
+>npm i webpack webpack-cli webpack-dev-server --save-dev
+
+6. create your application folders
+7. add files as necessary
+	a. a file with rendering DOM (index.js)
+	b. a file with root (container) component (App.js)
+	c. other files organized into folders
+
+8. create your application
+9. configure bundler (webapck)
+	a. create a file -- webpack.config.js (at root directory)
+
+
+10. configure compiler (babel) [typescript - tsc compiler]
+	a. add a file at thge root directory: .babelrc
+	b. put plugin information with "presets" key
+
+write code --(babel compiler)--> ES5 or lower version of code and compiles
+webapck takes this code and then bundles it
+webapck will use babel-loader 
+
+module, module-format, module-format-loader
+
+React Element Actual Scenario:
+
+// <h1 id='mainHeader'><span>hello<span></h1>
+/** var element = React.createElement(
+ *                          'h1', { id: 'mainHeader', onClick='testFn' },
+ *                           React.createElement('span',null,'hello'));
+ *  */
+var element = <h1><span>hello</span></h1>;
+const testFn = () => console.log('hi');
+var actualElement = {
+    type: 'h1',
+    props: {
+        id: 'mainHeader',
+        onClick: testFn,
+        children: {
+            type: 'span',
+            props: {
+                children: 'hello'
+            }
+        }
+    }
+}
+
+// component: App
+function App() {
+    return element;
+}
+
+// function person() {
+//     return {
+//         name: '',
+//         age: 0
+//     }
+// }
+
+// Component instance: <App />
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+NPM, BOWER
+
+
+steps:
+1. run the command "npm run build"
+	a. webpack calls babel
+	b. babel transpiles the ES6 code to lower version (ES5, ES3,..)
+		babel uses presets (plugins) whenever necessary
+		@babel/preset-react
+2. now webpack will bundle everything in single JS file
+	will use babel-loader to load the modules as present in transpiled code
+3. bundle css files into one and use css-loader (with help of style-loader) 
+4. webpack-dev-server will take care of loading the content from dist folder
+
+
+npm i webpack webpack-dev-server webpack-cli html-webpack-plugin clean-webpack-plugin --save-dev
+
+
+
+
+
+
+
+
+
