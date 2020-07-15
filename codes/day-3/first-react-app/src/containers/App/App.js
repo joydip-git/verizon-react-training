@@ -1,40 +1,61 @@
-import React from 'react'
-import Employee from '../../components/Employee/Employee';
+import React, { Component } from "react";
+import Employees from "../../components/Employees/Employees";
 
-const App = () => {
-    const people = [
+export default class App extends Component {
+  constructor() {
+    super();
+    //do it in the constructor in case you did not use arrow operator
+    //this.changeNameHandler = this.changeNameHandler.bind(this);
+    this.state = {
+      counter: 0,
+      people: [
         {
-            id:1,
-        name: 'anil',
-        address:'bangalore'
+          id: 1,
+          name: "anil",
+          address: "bangalore",
         },
         {
-        id:2,
-            name: 'sunil',
-            address: 'mumbai'
-        }, {
-            id:3,
-            name: 'mahjhesh',
-            address: 'chennai'
-        }]
-        ;
-    function changeName(e, ...args) {     
-       
-        console.log(args)
-        console.log(e)
-    }
+          id: 2,
+          name: "sunil",
+          address: "mumbai",
+        },
+        {
+          id: 3,
+          name: "mahjhesh",
+          address: "chennai",
+        },
+      ],
+    };
+  }
+
+  //changeNameHandler(id, newName)
+  changeNameHandler = (id, e) => {
+    const newName = e.target.value;
+    this.setState(
+      (prevState) => {
+        const newState = { ...prevState };
+        const found = newState.people.find((p) => p.id === id);
+        const index = newState.people.findIndex((p) => p.id === id);
+
+        found.name = newName;
+        newState.people[index] = found;
+
+        return {
+          people: newState.people,
+        };
+      },
+      () => console.log(this.state.people)
+    );
+  };
+
+  render() {
     return (
-        <div>
-            {console.log(this)}
-            {/* <Employee name={people[0].name} address={people[0].address}
-                nameChangeHandler={changeName.bind(this,people[0].id)} id={people[0].id}/> */}
-             <Employee name={people[0].name} address={people[0].address}
-                nameChangeHandler={changeName} id={people[0].id}/>
-            <Employee name={people[1].name} address={people[1].address} id={people[1].id}
-                nameChangeHandler={changeName} />
-            <Employee name={people[2].name} address={people[2].address} id={people[2].id}
-                nameChangeHandler={changeName} />
-        </div>
-    )
+      <div>
+        <Employees
+          people={this.state.people}
+          changeName={this.changeNameHandler}
+        />
+      </div>
+    );
+  }
 }
-export default App;

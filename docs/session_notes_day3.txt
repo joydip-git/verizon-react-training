@@ -44,7 +44,7 @@ in fact you have to pass everything manually, EVEN the event and FYI there is no
 WARNING: you are using multiple (two callbacks)
 NOTE: no need to attach additional argument in the parent comp
 
-child: <input type='' onChange = {(e)=>{return props.nameChangeHandler(props.id,e)}}/>
+child: <input type='' onChange = {(e)=>{ return props.nameChangeHandler(props.id,e)}}/>
 //lexical this
 
 function test(){
@@ -62,4 +62,16 @@ parent:
                              id={people[x].id} />
 
    changeName(val, e){}
+
+React --> Component, PureComponent  -- state = {
+					}
+
+state: JS object
+looks for changes made into it 
+accordingly render() is called to pass latest data to the components
+** oprtation of updating the old state to new state is done asynchronously
+
+
+
+
 
