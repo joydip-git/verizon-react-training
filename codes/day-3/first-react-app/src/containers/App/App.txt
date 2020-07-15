@@ -1,0 +1,82 @@
+import React from 'react'
+
+/*
+let data = 'Hello Guys again...';
+const el = React.createElement('h1', {id:'a'}, data);
+//<div id='test'><h1 class='mystyle' id='a'>Hello world</h1><div>
+// const el = <h1>Hello World</h1>;
+/**
+ * {
+ * type:'h1',
+ * props:{
+ *     id:'a',
+ *     className:'mystyle'
+ *     children:'Hello World'
+ * }
+ * }
+ */
+function App() {
+  return el;
+}
+export default App
+
+// function test() {
+//   return 20;
+
+// }
+
+// test();
+*/
+
+import React from 'react'
+import Employee from './components/Employee/Employee'
+
+// let x = 30;
+// const e1 = Employee({name:'joydip', age: 20, val:x});
+//const e1 = <Employee name='joydip' age={20}/>
+/**
+ * {
+ * key:'1'
+ * type:'p'
+ * props:{ 
+ * _ref: {name, age}
+ * }
+ * }
+ */
+
+function App() {
+ // console.log(e1)
+  let x = 20;
+  return (
+    <div>
+      <Employee name='joydip' age={x} />   
+      {/* {
+        e1
+      } */}
+    </div>
+  );
+}
+export default App;
+
+import React from 'react'
+import Employee from './components/Employee/Employee'
+
+
+//stateless component 
+//design component
+const obj = { x: 20 };
+function App() {
+  let x = 20;
+  return (
+    <div id="">
+      <Employee name={obj} age={x} /> 
+      {/* {
+        Employee({name:obj, age:20})
+      } */}
+    </div>
+  );
+}
+export default App;
+// props{ id="", chlidren: <reference of Employee component functions return element> }
+//{ type:'div', props:{ _x:{name:{}, age:20}}}
+//{ type:'div', props:{ name:{x:20}, age:20}}

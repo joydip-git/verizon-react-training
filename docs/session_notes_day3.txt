@@ -1,0 +1,65 @@
+pass data from parent to child (props)
+
+objective: pass data back from child to parent (event binding)
+
+props, event binding --> two way binding
+
+by firing the event you actually call the event handler function callback from child
+and by invoking the parent funtion this way you can pass args to the funcyion via the event
+event -> automatically
+additional data -> pass yuprself
+
+a. in this scenario only event object is passed automatically
+ child: <input type='' onChange = {props.nameChangeHandler}/>
+
+parent: 
+   <Employee nameChangeHandler = {changeName}/>
+
+   changeName(event){}
+
+b. in this scenario event object is passed automatically as second argument from parent component binding to function in the paremt component itself
+additional arg will be sent as first arg
+
+child: <input type='' onChange = {props.nameChangeHandler}/>
+
+parent: 
+   <Employee nameChangeHandler = {changeName.bind(this,people[x].id)} 
+                             id={people[x].id} />
+
+   changeName(x,y){}
+
+c. in this scenario event object is passed automatically as second argument from child component to function in the paremt component along with additional arg as first arg
+NOTE: no need to attach additional argument in the parent comp
+
+child: <input type='' onChange = {props.nameChangeHandler.bind(this, props.id)}/>
+
+parent: 
+   <Employee nameChangeHandler = {changeName} 
+                             id={people[x].id} />
+
+   changeName(x,y){}
+
+d. in this scenario event object is NEVER passed automatically as argument from child component to function in the paremt component.
+in fact you have to pass everything manually, EVEN the event and FYI there is no order (good for us)
+WARNING: you are using multiple (two callbacks)
+NOTE: no need to attach additional argument in the parent comp
+
+child: <input type='' onChange = {(e)=>{return props.nameChangeHandler(props.id,e)}}/>
+//lexical this
+
+function test(){
+this. x = 10;
+var r = this;
+function A(){
+   r.x
+  this.y = 20;
+}
+
+()=>{}
+
+parent: 
+   <Employee nameChangeHandler = {changeName} 
+                             id={people[x].id} />
+
+   changeName(val, e){}
+
