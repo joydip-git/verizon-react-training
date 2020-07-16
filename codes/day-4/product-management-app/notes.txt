@@ -1,0 +1,20 @@
+const numbers = [1, 2, 3, 4];
+    const transformedNumbers = numbers.map(function (number) {
+      return number * 2;
+    });
+
+
+     /**
+   * <tr><DataCom/></tr>
+   */
+  /**
+   * return (<><td></td><td></td><td></td></>);
+   */
+  render() {
+    //arr:[{type:'div',key:1},{type:'div',key:},{}]
+    const arr = this.state.products.map((p, index) => {
+      return <ProductDetail product={p} key={p.productId} />;
+    });
+    return arr;
+  }
+}

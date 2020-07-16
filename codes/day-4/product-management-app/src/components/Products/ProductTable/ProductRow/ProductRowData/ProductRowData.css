@@ -1,0 +1,10 @@
+.imgStyle {
+  width: 50px;
+  margin: 2px;
+}
+
+.fontStyle {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: medium;
+}
