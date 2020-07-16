@@ -18,3 +18,43 @@ const numbers = [1, 2, 3, 4];
     return arr;
   }
 }
+
+
+// import ProductService from "./service/productService";
+import React from "react";
+import Axios from "axios";
+
+const withProductService = (WrappedCommponent) => {
+  class WithProductService extends React.Component {
+    constructor() {
+      super();
+      // this.productServiceRef = new ProductService();
+      // this.state = {
+      //   productServiceRef: null,
+      // };
+      this.state = {
+        products: [],
+      };
+    }
+    baseUrl = "http://127.0.0.1:8081/productservice";
+    // createServiceHandler = () => {
+    //   this.setState({
+    //     productServiceRef: new ProductService(),
+    //   });
+    // };
+    getProducts = () => {
+      Axios.get("http://127.0.0.1:8081/productservice")
+        .then((response) => {
+          console.log(response.data);
+          this.setState({ products: response.data });
+        })
+        .catch((error) => console.log(error));
+    };
+    render() {
+      return <WrappedCommponent onGet={this.getProducts} />;
+    }
+  }
+  return WithProductService;
+};
+
+export default withProductService;
