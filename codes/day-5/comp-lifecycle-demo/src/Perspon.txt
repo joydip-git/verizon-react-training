@@ -1,0 +1,80 @@
+import React, { PureComponent } from "react";
+//import React, { Component } from "react";
+
+//export default class Person extends PureComponent
+export default class Person extends PureComponent {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       val: 0,
+//     };
+//     console.log("Person Created");
+//   }
+  static getDerivedStateFromProps(props, state) {
+    console.log("Person getDerivedStateFormProps");
+    return null;
+  }
+
+  //performance optimization
+  //     shouldComponentUpdate(nextProps, nextState) {
+
+  //     //  nextProps.pid === props.pid
+  //     // console.log("Person shouldComponentUpdate");
+  //     // if (nextProps.name === this.props.name) {
+  //     //   return false;
+  //     // } else {
+  //     //   return true;
+  //     // }
+  //     return true;
+  //   }
+  render() {
+    console.log("Person rendered");
+    const { personData, changeName } = { ...this.props };
+    return (
+      <div>
+        <input type="text" value={personData.name} onChange={changeName} />
+        <br />
+        <p>{personData.name}</p>
+      </div>
+    );
+  }
+  getSnapshotBeforeUpdate(props, state) {
+    console.log("Person getSnapshotBeforeUpdate");
+    return "this is snapshot";
+  }
+  componentDidUpdate(props, state, snapshot) {
+    //     axios.get()
+    //         .then(r =>
+    //             if(r.data)
+    //             this.setState())
+    // //   if(this.props.pid === this.state.pid )
+    // //pass id to server and get the person
+    // // axios
+    // //   .get("")
+    // //   .then((r) => {
+    // //     this.setState(
+    // //       {
+    // //         p: r.data,
+    // //       },
+    // //       () => {}
+    // //     );
+    // //   })
+    // //   .catch();
+    // setInterval(() => {
+    //   this.setState((prevState) => {
+    //     return {
+    //       val: prevState.val,
+    //     };
+    //   });
+    // }, 4000);
+    console.log("Person Updated");
+    console.log(snapshot);
+  }
+  componentDidMount() {
+    console.log("Person Mounted");
+  }
+  componentWillUnmount() {}
+  componentWillMount() {}
+  componentWillUpdate() {}
+  componentWillUnmount() {}
+}
